@@ -20,6 +20,7 @@ class PacientesController < ApplicationController
             render json: @paciente
           else
             render json: { error: 'Paciente no encontrado' }, status: :not_found
+            
           end
         end
       end
