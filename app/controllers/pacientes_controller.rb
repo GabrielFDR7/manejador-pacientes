@@ -10,7 +10,6 @@ class PacientesController < ApplicationController
   
     def buscar_por_cedula
       @paciente = Paciente.find_by(cedula: params[:cedula])
-  
       respond_to do |format|
         format.html do
           # Lógica para manejar solicitudes HTML
@@ -20,7 +19,7 @@ class PacientesController < ApplicationController
             render json: @paciente
           else
             render json: { error: 'Paciente no encontrado' }, status: :not_found
-            
+
           end
         end
       end
